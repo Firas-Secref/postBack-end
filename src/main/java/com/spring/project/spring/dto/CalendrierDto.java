@@ -40,6 +40,7 @@ public class CalendrierDto {
 	private String nomRepOrdonnateur;
 	private String nomChefProjet;
 	private String nomRepresentantService;
+	private boolean selectedFiche;
 
 
 	public static Calendrier toEntity (CalendrierDto calendrierDto)
@@ -95,5 +96,6 @@ public class CalendrierDto {
 				.nomRepOrdonnateur(calendrier.getFicheTechnique() != null ? calendrier.getFicheTechnique().getNomOrdonnateur(): null)
 				.nomRepresentantService(calendrier.getFicheTechnique()!=null ? calendrier.getFicheTechnique().getNomRepresentantService(): null)
 				.nomChefProjet(calendrier.getFicheTechnique()!=null ? calendrier.getFicheTechnique().getNomChefProjet(): null)
+				.selectedFiche((calendrier.getFicheTechnique()!=null? true: false))
 				.build();
 	}}
